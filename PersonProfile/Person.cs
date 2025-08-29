@@ -30,7 +30,7 @@ class Person
         {
             if (message.Contains("student") || message.Contains("pizza"))
             {
-                Console.WriteLine($"{message} (y/n)");
+                Console.WriteLine($"\n{message} (y/n)");
                 if (message.Contains("student"))
                 {
                     Student = Console.ReadKey().KeyChar.Equals('y');
@@ -38,7 +38,7 @@ class Person
                 else
                 {
                     PizzaEnjoyer = Console.ReadKey().KeyChar.Equals('y');
-                    Console.WriteLine(PizzaEnjoyer ? "You love pizza!" : "Not a pizza fan, huh?");
+                    Console.WriteLine(PizzaEnjoyer ? "\nYou love pizza!" : "\nNot a pizza fan, huh?");
                 }
             }
             else
@@ -65,7 +65,7 @@ class Person
                         FavNum = ValidInt();
                         break;
                     case "grade":
-                        Grade = Char.ToUpper(Console.ReadKey().KeyChar);
+                        Grade = char.ToUpper(ValidGrade());
                         break;
                 }
             }
@@ -124,6 +124,33 @@ Grade: {Grade}
                break;
        }
     }
+
+    private char ValidGrade()
+    {
+        char inputGrade;
+        char[] grades = ['A','B','C','D','F'];
+        do
+        {
+            inputGrade = char.ToUpper(Console.ReadKey().KeyChar);
+            if (!grades.Contains(inputGrade)) Console.WriteLine("\nEnter a valid grade. [A, B, C, D, F]");
+        } while (!grades.Contains(inputGrade));
+        return inputGrade;
+        
+    }
+    private double ValidDouble()
+    {
+        double validDouble;
+        bool isDouble;
+        do
+        {
+            isDouble = double.TryParse(Console.ReadLine(), out validDouble);
+            if (!isDouble)
+            {
+                Console.WriteLine("Try again with a valid decimal value in meters.");
+            }
+        } while (!isDouble);
+        return validDouble;
+    }
     private int ValidInt()
     {
         int validInt;
@@ -139,18 +166,5 @@ Grade: {Grade}
         return validInt;
     }
 
-    private double ValidDouble()
-    {
-        double validDouble;
-        bool isDouble;
-        do
-        {
-            isDouble = double.TryParse(Console.ReadLine(), out validDouble);
-            if (!isDouble)
-            {
-                Console.WriteLine("Try again with a valid decimal value in meters.");
-            }
-        } while (!isDouble);
-        return validDouble;
-    }
+
 }
