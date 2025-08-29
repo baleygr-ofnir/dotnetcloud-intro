@@ -84,7 +84,7 @@ Likes Pizza: {PizzaEnjoyer}
 Grade: {Grade}
 ---------------------");
        // Age check
-       Console.WriteLine(Age >= 18 ? "You are an adult." : "You are a minor.");
+       Console.WriteLine(Age >= 18 ? "\nYou are an adult." : "\nYou are a minor.");
        // Height check
        Console.WriteLine(Height > 1.80 ? "You are tall!" : "Height is average or below.");
 
@@ -133,7 +133,7 @@ Grade: {Grade}
             isInt = int.TryParse(Console.ReadLine(), out validInt);
             if (!isInt)
             {
-                Console.WriteLine("Enter an integer.");
+                Console.WriteLine("Try again with a valid integer.");
             }
         } while (!isInt);
         return validInt;
@@ -148,7 +148,7 @@ Grade: {Grade}
             isDouble = double.TryParse(Console.ReadLine(), out validDouble);
             if (!isDouble)
             {
-                Console.WriteLine("Enter a value in meters with two decimal places.");
+                Console.WriteLine("Try again with a valid decimal value in meters.");
             }
         } while (!isDouble);
         return validDouble;

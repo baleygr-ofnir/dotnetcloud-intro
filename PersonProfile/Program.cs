@@ -6,5 +6,6 @@ class Program
     {
         var person = new Person();
         person.GetProfile();
+        Console.WriteLine($"\nThanks for using the program, {person.Name}! See you soon!");
     }
 }
