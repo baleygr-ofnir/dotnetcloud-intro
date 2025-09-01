@@ -83,48 +83,53 @@ Student: {Student}
 Likes Pizza: {PizzaEnjoyer}
 Grade: {Grade}
 ---------------------");
-       // Age check
-       Console.WriteLine(Age >= 18 ? "\nYou are an adult." : "\nYou are a minor.");
-       // Height check
-       Console.WriteLine(Height > 1.80 ? "You are tall!" : "Height is average or below.");
 
-       // Favourite number check
-       switch (FavNum)
-       {
-           case 7:
-               Console.WriteLine("Lucky 7!");
-               break;
-           case 10:
-               Console.WriteLine("Perfect 10!");
-               break;
-           case 42:
-               Console.WriteLine("The Answer to the Ultimate Question of Life, the Universe, and Everything!");
-               break;
-           default:
-               Console.WriteLine("Cool number!");
-               break;
-       }
-       // Grade check
-       switch (Grade)
-       {
-           case 'A':
-               Console.WriteLine("Excellent work!");
-               break;
-           case 'B':
-               Console.WriteLine("Good job.");
-               break;
-           case 'C':
-               Console.WriteLine("You passed.");
-               break;
-           case 'D':
-               Console.WriteLine("Needs improvement.");
-               break;
-           case 'F':
-               Console.WriteLine("Failed, try again.");
-               break;
-       }
     }
 
+    public void GetEval()
+    {
+        // Age check
+        Console.WriteLine(Age >= 18 ? $"\n{Age} years old: You are an adult." : $"\n{Age} years old: You are a minor.");
+        // Height check
+        Console.WriteLine(Height > 1.80 ? $"{Height} m: You are tall!" : $"{Height}m: Height is average or below.");
+
+        // Favourite number check
+        switch (FavNum)
+        {
+            case 7:
+                Console.WriteLine($"Favourite number {FavNum}: Lucky 7!");
+                break;
+            case 10:
+                Console.WriteLine($"Favourite number {FavNum}: Perfect 10!");
+                break;
+            case 42:
+                Console.WriteLine($"Favourite number {FavNum}: The Answer to the Ultimate Question of Life, the Universe, and Everything!");
+                break;
+            default:
+                Console.WriteLine($"Favourite number {FavNum}: Cool number!");
+                break;
+        }
+        // Grade check
+        switch (Grade)
+        {
+            case 'A':
+                Console.WriteLine($"Grade {Grade}: Excellent work!");
+                break;
+            case 'B':
+                Console.WriteLine($"Grade {Grade}: Good job.");
+                break;
+            case 'C':
+                Console.WriteLine($"Grade {Grade}: You passed.");
+                break;
+            case 'D':
+                Console.WriteLine($"Grade {Grade}: Needs improvement.");
+                break;
+            case 'F':
+                Console.WriteLine($"Grade {Grade}: Failed, try again.");
+                break;
+        }
+        
+    }
     private char ValidGrade()
     {
         char inputGrade;
